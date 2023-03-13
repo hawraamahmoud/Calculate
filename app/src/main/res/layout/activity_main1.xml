@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="@dimen/paddingLarge">
+
+    <TextView
+        android:id="@+id/hex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:gravity="left"
+        android:text="HexaDecimal"
+        android:textColor="@color/lightblue"
+        android:textSize="@dimen/sizetext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/hex"
+        app:layout_constraintTop_toTopOf="@id/hex"
+        app:layout_constraintBottom_toBottomOf="@id/hex"/>
+
+
+
+    <TextView
+        android:id="@+id/decimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:gravity="left"
+        android:text="Decimal"
+        android:textColor="@color/lightblue"
+        android:textSize="@dimen/sizetext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hex" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/decimal"
+        app:layout_constraintTop_toTopOf="@id/decimal"
+        app:layout_constraintBottom_toBottomOf="@id/decimal"/>
+
+    <TextView
+        android:id="@+id/oct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="Octal"
+        android:textColor="@color/lightblue"
+        android:textSize="@dimen/sizetext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/decimal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/oct"
+        app:layout_constraintTop_toTopOf="@id/oct"
+        app:layout_constraintBottom_toBottomOf="@id/oct"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="left"
+        android:text="Binary"
+        android:textColor="@color/lightblue"
+        android:textSize="@dimen/sizetext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oct" />
+    <TextView
+        android:id="@+id/binaryResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text"
+        app:layout_constraintStart_toEndOf="@id/textView3"
+        app:layout_constraintTop_toTopOf="@id/textView3"
+        app:layout_constraintBottom_toBottomOf="@id/textView3"/>
+
+    <TextView
+        android:id="@+id/inputNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text"
+
+        app:layout_constraintTop_toBottomOf="@id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton2"
+        style="@style/CalculatorButton.del"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="64dp"
+        android:text="AC"
+        android:onClick="onClickDelete"
+        app:layout_constraintEnd_toStartOf="@+id/appCompatButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton"
+        style="@style/CalculatorButton.number"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="D"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toStartOf="@+id/appCompatButton3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/appCompatButton2"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton3"
+        style="@style/CalculatorButton.number"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="E"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toStartOf="@+id/appCompatButton4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/appCompatButton"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton4"
+        style="@style/CalculatorButton.number"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="F"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/appCompatButton3"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton9"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="8dp"
+        android:text="9"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton2"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton2"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatButton2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton10"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="A"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton9" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton11"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="B"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton3"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton3"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton9" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton13"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="C"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton4"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton4"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton9" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton12"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="8dp"
+        android:text="5"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton9"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton9"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatButton9" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton15"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="6"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton10"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton10"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton12" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton14"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="7"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton11"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton11"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton12" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton19"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="8"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton13"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton13"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton12" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton16"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="8dp"
+        android:text="1"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton12"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton12"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatButton12" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton17"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="2"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton15"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton15"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton16" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton18"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="3"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton14"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton14"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton16" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton21"
+        style="@style/CalculatorButton.number"
+        android:onClick="onClickNumber"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:text="4"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton19"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton19"
+        app:layout_constraintTop_toTopOf="@+id/appCompatButton16" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton20"
+        style="@style/CalculatorButton.zero"
+        android:layout_width="170dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton17"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton16"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatButton16" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/CalculatorButton.Result"
+        android:layout_width="170dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="8dp"
+        android:text="="
+        android:onClick="onClickEqual"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatButton21"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton18"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatButton18" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
